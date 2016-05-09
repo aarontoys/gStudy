@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-var habitList = require('../../../db/habitListQueries')
+var decks = require('../../../db/deckQueries')
 
 router.get('/', function (req, res, next) {
-  habitList.getAllHabits()
+  decks.getAllDecks()
     .then(function (results){
       res.status(200).json({
         status: 'success',
@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
   console.log('line20: ', req.params.id);
-  habitList.getSingleHabit(req.params.id)
+  decks.getSingleHabit(req.params.id)
     .then(function (result) {
       res.status(200).json({
         status: 'success',
@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
   console.log('habit line34: ', req.body);
   var b = req.body;
 
-  habitList.addHabit(b.habit, b.description, b.interval, b.period, b.parent_habit_id, b.category_id, b.public, b.cost)
+  decks.addHabit(b.habit, b.description, b.interval, b.period, b.parent_habit_id, b.category_id, b.public, b.cost)
     .then(function (id) {
       console.log('new habit id: ', id);
       res.status(200).json({

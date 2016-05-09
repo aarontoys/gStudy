@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var habitList = require('../../../db/habitListQueries')
+// var habitList = require('../../../db/habitListQueries')
 
 router.get('/', function(req, res, next) {
   res.send('hi');

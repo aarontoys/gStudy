@@ -1,7 +1,7 @@
 var knex = require('./knex');
 
-var getAllHabits = function () { 
-  return knex('habits');
+var getAllDecks = function () { 
+  return knex('decks');
 };
 
 var addHabit = function (habit, description, interval, period, parent_habit_id, category_id, public, cost) {
@@ -26,7 +26,7 @@ module.exports = {
     // getUserHabits: function() {
     //   return userHabits();  
     // }
-    getAllHabits: getAllHabits,
+    getAllDecks: getAllDecks,
     addHabit: addHabit,
     getSingleHabit: getSingleHabit
 }
