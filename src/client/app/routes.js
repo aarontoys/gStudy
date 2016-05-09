@@ -6,9 +6,9 @@ angular
   .module('myApp')
   .config(config);
 
-config.$inject = ['$routeProvider']
+config.$inject = ['$routeProvider', '$locationProvider']
 
-function config ($routeProvider) {
+function config ($routeProvider, $locationProvider) {
   console.log('hi');
   $routeProvider
     .when('/', {
@@ -18,6 +18,8 @@ function config ($routeProvider) {
     //   template: '<div app-members></div>',
     //   controller: MyGeneralController
     // })
+
+  $locationProvider.html5Mode(true);
 }
 
 
