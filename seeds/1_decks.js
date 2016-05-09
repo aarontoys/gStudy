@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
       id: 3, 
       name: 'Angular',
       description: 'This is a Angular review deck',
-      img: 'https://angular.io/resources/images/logos/angular2/shield-with-beta.png'
+      img: 'http://pucksart.com/wp-content/uploads/2014/10/AngularJS-Shield-large-282x300.png'
     })
   );
 };

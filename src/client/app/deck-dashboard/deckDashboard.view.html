@@ -1,0 +1,16 @@
+<div class="col-md-8">
+  <h3><span class="glyphicon glyphicon-plus-sign"></span> Create a New Deck</h3>
+  <p>My Decks</p>
+  <hr>
+  <div class="row">
+  <div class="col-md-4" ng-repeat="deck in vm.decks ">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{deck.img}}" alt="{{deck.name}}" style="height:150px;">
+    </a>
+    <div class="caption">
+      <p><strong>{{deck.name}}</strong></p>
+  </div>
+</div>
+<div class="col-md-4">
+  
+</div>
