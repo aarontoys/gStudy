@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('lname').notNullable();
     table.string('email').notNullable().unique();
     table.string('pword').notNullable();
+    table.timestamps();
   })  
 };
 

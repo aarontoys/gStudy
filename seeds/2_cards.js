@@ -1,5 +1,8 @@
 
 exports.seed = function(knex, Promise) {
+
+  var now = new Date();
+  
   return Promise.join(
     // Deletes ALL existing entries
     knex('cards').del(), 
@@ -11,7 +14,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test JS answer 1',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 1
+      deck_id: 1,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 2, 
@@ -19,7 +24,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test JS answer 2',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 1
+      deck_id: 1,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 3, 
@@ -27,7 +34,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test JS answer 3',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 1
+      deck_id: 1,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 4, 
@@ -35,7 +44,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test jQuery answer 1',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 2
+      deck_id: 2,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 5, 
@@ -43,7 +54,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test jQuery answer 2',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 2
+      deck_id: 2,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 6, 
@@ -51,7 +64,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test jQuery answer 3',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 2
+      deck_id: 2,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 7, 
@@ -59,7 +74,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test Angular answer 1',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 3
+      deck_id: 3,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 8, 
@@ -67,7 +84,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test Angular answer 2',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 3
+      deck_id: 3,
+      created_at: now,
+      updated_at: now
     }),
     knex('cards').insert({
       id: 9, 
@@ -75,7 +94,9 @@ exports.seed = function(knex, Promise) {
       answer: 'Test Angular answer 3',
       question_img_url: '',
       answer_img_url: '',
-      deck_id: 3
+      deck_id: 3,
+      created_at: now,
+      updated_at: now
     })
   );
 };

@@ -1,5 +1,8 @@
 
 exports.seed = function(knex, Promise) {
+
+  var now = new Date();
+  
   return Promise.join(
     // Deletes ALL existing entries
     knex('decks').del(), 
@@ -9,19 +12,25 @@ exports.seed = function(knex, Promise) {
       id: 1, 
       name: 'JavaScript',
       description: 'This is a JavaScript review deck',
-      img: 'https://www.codementor.io/assets/page_img/learn-javascript.png'
+      img: 'https://www.codementor.io/assets/page_img/learn-javascript.png',
+      created_at: now,
+      updated_at: now
     }),
     knex('decks').insert({
       id: 2, 
       name: 'jQuery',
       description: 'This is a jQuery review deck',
-      img: 'http://www.exuberantsolutions.com/course_logo/jquery-icon.png'
+      img: 'http://www.exuberantsolutions.com/course_logo/jquery-icon.png',
+      created_at: now,
+      updated_at: now
     }),
     knex('decks').insert({
       id: 3, 
       name: 'Angular',
       description: 'This is a Angular review deck',
-      img: 'http://pucksart.com/wp-content/uploads/2014/10/AngularJS-Shield-large-282x300.png'
+      img: 'http://pucksart.com/wp-content/uploads/2014/10/AngularJS-Shield-large-282x300.png',
+      created_at: now,
+      updated_at: now
     })
   );
 };

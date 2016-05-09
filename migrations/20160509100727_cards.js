@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.string('question_img_url');
     table.string('answer_img_url');
     table.integer('deck_id').references('decks.id').onDelete('cascade');
+    table.timestamps();
   })
 };  
 
