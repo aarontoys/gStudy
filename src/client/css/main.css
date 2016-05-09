@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-control[readonly] {
+    background-color: #fff;
+    /* any other styles */
+}
+
+.input-group {
+  margin-bottom: 3px;
+}
