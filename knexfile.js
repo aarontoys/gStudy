@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost:5432/project3'
+    connection: 'postgres://localhost:5432/gStudy'
   },
 
   production: {
@@ -14,7 +14,7 @@ module.exports = {
 
   test: {
     client: 'pg',
-    connection: 'postgres://localhost:5432/project3'
+    connection: 'postgres://localhost:5432/gStudy'
   },
 
 };
