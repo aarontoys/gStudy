@@ -1,1 +1,6 @@
-var app = angular.module('myApp', ['ngSanitize', 'ngRoute','ui.bootstrap']);
+// var app = angular.module('myApp', ['ngRoute','angularMoment']);
+
+(function () {
+  angular
+    .module('myApp', ['ngRoute','angularMoment'])
+})();
