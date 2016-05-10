@@ -16,27 +16,27 @@ router.get('/', function (req, res, next) {
     })
 });
 
-router.get('/:id', function (req, res, next) {
-  console.log('line20: ', req.params.id);
-  decks.getSingleHabit(req.params.id)
-    .then(function (result) {
-      res.status(200).json({
-        status: 'success',
-        data: result
-      });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
-});
+// router.get('/:id', function (req, res, next) {
+//   console.log('line20: ', req.params.id);
+//   decks.getSingleHabit(req.params.id)
+//     .then(function (result) {
+//       res.status(200).json({
+//         status: 'success',
+//         data: result
+//       });
+//     })
+//     .catch(function (err) {
+//       return next(err);
+//     });
+// });
 
-router.post('/', function (req, res, next) {
-  console.log('habit line34: ', req.body);
+router.post('/new-deck', function (req, res, next) {
+  console.log('decks line34: ', req.body);
   var b = req.body;
 
-  decks.addHabit(b.habit, b.description, b.interval, b.period, b.parent_habit_id, b.category_id, b.public, b.cost)
+  decks.addDeck(b.name, b.description, b.img)
     .then(function (id) {
-      console.log('new habit id: ', id);
+      console.log('new deck id: ', id);
       res.status(200).json({
         status: 'success',
         id: id

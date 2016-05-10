@@ -88,44 +88,33 @@ describe('habitList routes', function() {
   //   });
   // });
 
-  // describe('/POST habits', function() {
+  describe('/POST decks', function() {
 
-  //   it('should add a new habit', function(done) {
-  //     chai.request(server)
-  //     .post('/habits')
-  //     .send({
-  //       habit: 'Check Email',
-  //       description: 'Check and respond to email twice a day',
-  //       interval: 2,
-  //       period: 'daily',
-  //       parent_habit_id: 0,
-  //       category_id: 3,
-  //       public: true,
-  //       cost: 1.25
-  //     })
-  //     .end(function(err, res) {
-  //       chai.request(server)
-  //       .get('/habits')
-  //       .end(function(err, res) {
-  //         res.status.should.equal(200);
-  //         res.type.should.equal('application/json');
-  //         res.body.should.be.a('object');
-  //         res.body.should.have.property('data')
-  //         res.body.status.should.equal('success')
-  //         res.body.data.length.should.equal(4);
-  //         res.body.data[3].habit.should.equal('Check Email');
-  //         res.body.data[3].description.should.equal('Check and respond to email twice a day');
-  //         res.body.data[3].interval.should.equal(2);
-  //         res.body.data[3].period.should.equal('daily');
-  //         res.body.data[3].parent_habit_id.should.equal(0);
-  //         res.body.data[3].category_id.should.equal(3);
-  //         res.body.data[3].public.should.equal(true);
-  //         res.body.data[3].cost.should.equal('1.25');
-  //         parseFloat(res.body.data[3].cost).should.equal(parseFloat('1.25'));
-  //         done()
-  //       })
-  //     })
-  //   })
-  // })
+    it('should add a new deck', function(done) {
+      chai.request(server)
+      .post('/decks/new-deck')
+      .send({
+        name: 'Test name',
+        description: 'Deck description',
+        img: 'https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300-rw',
+      })
+      .end(function(err, res) {
+        chai.request(server)
+        .get('/decks')
+        .end(function(err, res) {
+          res.status.should.equal(200);
+          res.type.should.equal('application/json');
+          res.body.should.be.a('object');
+          res.body.should.have.property('data')
+          res.body.status.should.equal('success')
+          res.body.data.length.should.equal(4);
+          res.body.data[3].name.should.equal('Test name');
+          res.body.data[3].description.should.equal('Deck description');
+          res.body.data[3].img.should.equal('https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300-rw');
+          done()
+        })
+      })
+    })
+  })
 
 });

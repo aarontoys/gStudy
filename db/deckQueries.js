@@ -1,19 +1,19 @@
 var knex = require('./knex');
 
+var now = new Date();
+
 var getAllDecks = function () { 
   return knex('decks');
 };
 
-var addHabit = function (habit, description, interval, period, parent_habit_id, category_id, public, cost) {
-  return knex('habits').insert({
-    habit: habit,
+var addDeck = function (name, description, img) {
+  console.log('img:',img);
+  return knex('decks').insert({
+    name: name,
     description: description,
-    interval: interval,
-    period: period,
-    parent_habit_id: parent_habit_id,
-    category_id: category_id,
-    public: public,
-    cost: cost
+    img: img,
+    created_at: now,
+    updated_at: now
   },'id')
 }
 
@@ -27,6 +27,6 @@ module.exports = {
     //   return userHabits();  
     // }
     getAllDecks: getAllDecks,
-    addHabit: addHabit,
+    addDeck: addDeck,
     getSingleHabit: getSingleHabit
 }

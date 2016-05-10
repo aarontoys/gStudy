@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
 
     // Inserts seed entries
     knex('decks').insert({
-      id: 1, 
+      // id: 1, 
       name: 'JavaScript',
       description: 'This is a JavaScript review deck',
       img: 'https://www.codementor.io/assets/page_img/learn-javascript.png',
@@ -17,7 +17,7 @@ exports.seed = function(knex, Promise) {
       updated_at: now
     }),
     knex('decks').insert({
-      id: 2, 
+      // id: 2, 
       name: 'jQuery',
       description: 'This is a jQuery review deck',
       img: 'http://www.exuberantsolutions.com/course_logo/jquery-icon.png',
@@ -25,7 +25,7 @@ exports.seed = function(knex, Promise) {
       updated_at: now
     }),
     knex('decks').insert({
-      id: 3, 
+      // id: 3, 
       name: 'Angular',
       description: 'This is a Angular review deck',
       img: 'http://pucksart.com/wp-content/uploads/2014/10/AngularJS-Shield-large-282x300.png',
