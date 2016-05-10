@@ -13,17 +13,19 @@
       }
     }
 
-    // newDeckCtrl.$inject = ['newDeckDataService'];
-
-    // function newDeckCtrl (newDeckDataService) {
     function newDeckCtrl () {
       var vm = this;
-
-      vm.questionArr = [''];
+      vm.questionArr = [{}];
 
       vm.addNewQuestion = function () {
-        console.log('clicked!');
-        vm.questionArr.push('');
+
+        vm.questionArr.push({
+          question: vm.question,
+          question_img_url: vm.question_img_url,
+          answer: vm.answer,
+          answer_img_url: vm.answer_img_url
+        });
+        console.log(vm.questionArr);
       }
     }
 

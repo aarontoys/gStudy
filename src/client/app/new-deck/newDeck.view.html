@@ -20,7 +20,7 @@
           </div>
       </div>
     </div>
-    <div class="panel panel-default" ng-repeat="qArr in vm.questionArr track by $index" ng>
+    <div class="panel panel-default" ng-repeat="qArr in vm.questionArr track by $index">
       <div class="panel-body">
         <p>Cards:</p>
         <div class="col-md-1">
@@ -30,17 +30,17 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="question">Question:</label>
-              <input ng-model="" type="text" class="form-control" id="question" placeholder="What is semantic HTML?"><br>
+              <input ng-model="qArr.question" type="text" class="form-control" id="question" placeholder="What is semantic HTML?"><br>
               <label for="question_img_url">Question Image URL (optional):</label>
-              <input ng-model="" type="text" class="form-control" id="question_img_url" placeholder="http://example.com/example.jpg">
+              <input ng-model="qArr.question_img_url" type="text" class="form-control" id="question_img_url" placeholder="http://example.com/example.jpg">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="answer">Answer:</label>
-              <input ng-model="" type="text" class="form-control" id="answer" placeholder="Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the information in webpages and web applications rather than merely to define its presentation or look."><br>
+              <input ng-model="qArr.answer" type="text" class="form-control" id="answer" placeholder="Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the information in webpages and web applications rather than merely to define its presentation or look."><br>
               <label for="answer_img_url">Answer Imgae URL (optional):</label>
-              <input ng-model="" type="text" class="form-control" id="answer_img_url" placeholder="http://example.com/example.jpg">
+              <input ng-model="qArr.answer_img_url" type="text" class="form-control" id="answer_img_url" placeholder="http://example.com/example.jpg">
             </div>
           </div>
           <div ng-click="vm.addNewQuestion()" ng-show="$last">
