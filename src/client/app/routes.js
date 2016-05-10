@@ -14,12 +14,12 @@ function config ($routeProvider, $locationProvider) {
     .when('/', {
       template: '<div app-deck-dashboard></div>'
     })
-    // .when('/members', {
-    //   template: '<div app-members></div>',
-    //   controller: MyGeneralController
-    // })
+    .when('/new-deck', {
+      template: '<div app-new-deck></div>'
+      // controller: MyGeneralController
+    });
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 }
 
 

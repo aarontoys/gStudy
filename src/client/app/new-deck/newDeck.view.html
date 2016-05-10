@@ -1,0 +1,56 @@
+<div class="row">
+  <h3 class="text-center">Create a New Deck</h3>
+  <form>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>Deck Info:</p>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Deck Name:</label>
+              <input ng-model="vm.name" type="text" class="form-control" id="name" placeholder="HTML">
+            </div> 
+            <div class="form-group">
+              <label for="img">Deck Name:</label>
+              <input ng-model="vm.img" type="text" class="form-control" id="img" placeholder="http://example.com/example.jpg">
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="description">Deck Description:</label>
+            <textarea ng-model="vm.description" type="text" class="form-control" id="description" rows="5" placeholder="This deck contains 100 HTML questions"></textarea>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default" ng-repeat="qArr in vm.questionArr track by $index" ng>
+      <div class="panel-body">
+        <p>Cards:</p>
+        <div class="col-md-1">
+          <h3>{{$index + 1}}.</h3>
+        </div>
+        <div class="col-md-11">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="question">Question:</label>
+              <input ng-model="" type="text" class="form-control" id="question" placeholder="What is semantic HTML?"><br>
+              <label for="question_img_url">Question Image URL (optional):</label>
+              <input ng-model="" type="text" class="form-control" id="question_img_url" placeholder="http://example.com/example.jpg">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="answer">Answer:</label>
+              <input ng-model="" type="text" class="form-control" id="answer" placeholder="Semantic HTML is the use of HTML markup to reinforce the semantics, or meaning, of the information in webpages and web applications rather than merely to define its presentation or look."><br>
+              <label for="answer_img_url">Answer Imgae URL (optional):</label>
+              <input ng-model="" type="text" class="form-control" id="answer_img_url" placeholder="http://example.com/example.jpg">
+            </div>
+          </div>
+          <div ng-click="vm.addNewQuestion()" ng-show="$last">
+            <h4><span class="glyphicon glyphicon-plus-sign"></span> Add a new Question</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>{{$last}}</p>
+    <button type="submit" class="pull-right btn btn-primary">Create Deck</button>
+  </form>
+</div>
+</div>
