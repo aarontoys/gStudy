@@ -97,6 +97,20 @@ describe('habitList routes', function() {
         name: 'Test name',
         description: 'Deck description',
         img: 'https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300-rw',
+        cardArr: [
+          {
+            question: 'q1',
+            answer: 'a1',
+            question_img_url: 'test img1',
+            answer_img_url: 'test ans img1'
+          },
+          {
+            question: 'q2',
+            answer: 'a2',
+            question_img_url: 'test img2',
+            answer_img_url: 'test ans img2'
+          }
+        ]
       })
       .end(function(err, res) {
         chai.request(server)
@@ -111,7 +125,18 @@ describe('habitList routes', function() {
           res.body.data[3].name.should.equal('Test name');
           res.body.data[3].description.should.equal('Deck description');
           res.body.data[3].img.should.equal('https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300-rw');
+          
+          chai.request(server)
+          .get('/decks/4')
+          .end(function(err, res) {
+            res.status.should.equal(200);
+            res.type.should.equal('application/json');
+            res.body.should.be.a('object');
+            res.body.should.have.property('data');
+            res.body.status.should.equal('success');
+            res.body.data.length.should.equal(2);
           done()
+          })
         })
       })
     })

@@ -17,9 +17,21 @@ var addDeck = function (name, description, img) {
   },'id')
 }
 
-function getSingleHabit (id) {
-  return knex('habits')
-    .where('id',id)
+var addCard = function (id, question, answer, qImg, aImg) {
+  return knex('cards').insert({
+    question: question,
+    answer: answer,
+    question_img_url: qImg,
+    answer_img_url: aImg,
+    deck_id: id,
+    created_at: now,
+    updated_at: now
+  },'id')
+}
+
+function getSingleDeck (id) {
+  return knex('cards')
+    .where('deck_id',id)
 }
 
 module.exports = {
@@ -28,5 +40,6 @@ module.exports = {
     // }
     getAllDecks: getAllDecks,
     addDeck: addDeck,
-    getSingleHabit: getSingleHabit
+    addCard: addCard,
+    getSingleDeck: getSingleDeck
 }
